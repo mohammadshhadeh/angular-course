@@ -1,0 +1,4 @@
+<section class="list" *ngFor="let list of lists; let i = index">
+    <button class="remove" (click)="removeList(i)">X</button>
+    <p class="list-details">{{list}}</p>
+</section>

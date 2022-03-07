@@ -1,0 +1,13 @@
+.list {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.remove {
+    background: darkred;
+    color: white;
+    padding: 6px;
+    margin-right: 12px;
+}
+

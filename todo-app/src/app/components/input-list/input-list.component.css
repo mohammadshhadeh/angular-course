@@ -1,0 +1,19 @@
+.input-fields {
+    margin: 8px 0;
+}
+
+.list-field {
+    border: 1px solid #333;
+    background: white;
+    padding: 6px 8px;
+    width: 100%;
+}
+
+.list-button {
+    padding: 8px;
+    margin: 8px 0;
+    font: 600 14px/1 'sans-serif';
+    background: lightblue;
+    cursor: pointer;
+}
+

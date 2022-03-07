@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+    margin-top: 30px;
+  }
+  
+  p {
+    color: blue;
+  }
+  
+  .btn {
+    margin-right: 4px;
+  }
+  
+  .panel-default {
+    padding: 8px;
+    border: 1px solid silver;
+    margin-bottom: 12px;
+  }
+  

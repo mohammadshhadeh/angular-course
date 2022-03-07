@@ -1,0 +1,8 @@
+<section class="container">
+  <div class="head">
+    <h1 class="title">To Do List</h1>
+    <p class="desc">Add your items</p>
+  </div>
+  <app-input-list (listDetailsAdded)="appendListDetails($event)"></app-input-list>
+  <app-lists [lists]="lists"></app-lists>
+</section>

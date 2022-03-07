@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+button,
+input,
+select {
+    border: none;
+    background: none;
+    outline: none
+}
