@@ -2,10 +2,13 @@
     <div class="col-xs-12">
         <p>Add new Servers or blueprints!</p>
         <label>Server Name</label>
+        <!-- template reference -->
         <input type="text" class="form-control" #NameInput />
         <label>Server Content</label>
+        <!-- template reference -->
         <input type="text" class="form-control" #serverContent />
         <br />
+        <!-- Event binding (event) = "handler" -->
         <button class="btn btn-primary" (click)="onAddServer(NameInput)">Add Server</button>
         <button class="btn btn-primary" (click)="onAddBlueprint(NameInput)">
             Add Server Blueprint

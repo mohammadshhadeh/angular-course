@@ -40,7 +40,10 @@ export class ServerElementComponent
 {
   @Input('srvElement') element: Server;
   @Input() name: any;
+  // The change detector looks for the first element or the directive matching the selector in the view DOM
   @ViewChild('heading', { static: true}) header: any;
+  // static True to resolve query results before change
+  // Use the ContentChildren decorator to get the list of element references from the projected content.
   @ContentChild('serverParagraph', { static: true}) paragraph: any;
 
   constructor() {
