@@ -1,0 +1,8 @@
+<div class="task">
+    <!-- string interpolation -->
+    <h3>
+        {{ task.text }}
+        <fa-icon [ngStyle]="{ color: 'red' }" [icon]="faTimes" (click)="onDelete(task)"></fa-icon>
+    </h3>
+    <h3>{{ task.day }}</h3>
+</div>
