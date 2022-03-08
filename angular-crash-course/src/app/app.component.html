@@ -5,6 +5,7 @@
     <div class="col-xs-12">
       <button class="btn btn-primary" (click)="onNameChanged()">Change first Element</button>
       <button class="btn btn-danger" (click)="onFirstDestroy()">Destroy first Element</button>
+      <!-- structural directives -->
       <app-server-element
         *ngFor="let serverElement of serverElements"
         [srvElement]="serverElement"

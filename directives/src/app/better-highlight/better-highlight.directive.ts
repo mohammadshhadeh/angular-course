@@ -1,5 +1,6 @@
 import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
 
+// Built-in directives
 @Directive({
   selector: '[appBetterHighlight]'
 })
