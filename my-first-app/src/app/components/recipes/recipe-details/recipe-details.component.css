@@ -1,0 +1,4 @@
+.btn-group.show .dropdown-menu {
+    display: block;
+    top: 42px;
+}
