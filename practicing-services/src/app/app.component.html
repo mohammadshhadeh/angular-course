@@ -1,0 +1,4 @@
+<h1>Active Users</h1>
+<app-active-users *ngFor="let user of activeUsers; let i = index" [user]="user" [id]="i"></app-active-users>
+<h1>Inactive Users</h1>
+<app-inactive-users *ngFor="let user of inactiveUsers let i = index" [user]="user" [id]="i"></app-inactive-users>
