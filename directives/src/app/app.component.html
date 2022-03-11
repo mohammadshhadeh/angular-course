@@ -1,2 +1,11 @@
+
+<h1 *appUnless="false">Shehadeh</h1>
+<div [ngSwitch]="'1'">
+    <p *ngSwitchCase="1">value is 1</p>
+    <p *ngSwitchCase="2">value is 2</p>
+    <p *ngSwitchCase="3">value is 3</p>
+    <p *ngSwitchCase="4">value is 4</p>
+    <p *ngSwitchDefault>value is defalue</p>
+</div>
 <h1 appBasicHighlight>Hello World</h1>
-<h1 appBetterHighlight>Hello World</h1>
+<h1 appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'green'">Hello World</h1>

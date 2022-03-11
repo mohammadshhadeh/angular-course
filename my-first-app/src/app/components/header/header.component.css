@@ -1,0 +1,7 @@
+.navbar-nav .dropdown-menu {
+    position: absolute;
+}
+
+.dropdown.show .dropdown-menu {
+    display: block;
+}
