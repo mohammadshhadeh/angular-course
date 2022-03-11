@@ -1,0 +1,14 @@
+h1 {
+    margin-bottom: 12px;
+}
+
+.container {
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin: -1px;
+}
+
+span:nth-child(2) {
+    cursor: pointer;
+    color: lightseagreen;
+}
