@@ -1,0 +1,16 @@
+<div class="todo-from">
+    <div class="todo-controls">
+        <input class="todo-control" type="text" placeholder="Enter todo" [(ngModel)]="todoItem">
+        <div class="todo-submit">
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a home icon" (click)="enteredTodoHandler()">
+                <mat-icon>+</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="todo-filter">
+        <mat-slide-toggle class="todo-toggle" (change)="filterTodoLists()" [(ngModel)]="todoItemFilter">
+            Filter by finished
+        </mat-slide-toggle>
+        <h2 class="todo-result">Result</h2>
+    </div>
+</div>

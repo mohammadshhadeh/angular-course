@@ -1,0 +1,30 @@
+.todo-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-control {
+    width: calc(100% - 92px);
+    padding: 8px 16px;
+    border: 1px solid #bbb;
+    outline: none;
+    font-size: 16px;
+}
+
+.todo-submit {
+    position: relative;
+}
+
+mat-icon {
+    position: absolute;
+    right: 8px;
+    top: 2px;
+}
+
+.todo-toggle {
+    margin: 12px 0;
+}
+
+.todo-result {
+    margin: 0;
+}

@@ -1,0 +1,11 @@
+<div class="todo-details" *ngFor="let todoList of todoLists; let i = index">
+    <div class="todo-details__content">
+        <mat-checkbox class="example-margin" (change)="updatedcheckedList(i)"></mat-checkbox>
+        <span class="todo-details__list" [ngClass]="{'line-through': todoList.isChecked}">
+            {{todoList.list | customPipe }}
+        </span>
+    </div>
+    <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon" (click)="deleteTodoList(i)">
+        <mat-icon>delete</mat-icon>
+    </button>
+</div>
