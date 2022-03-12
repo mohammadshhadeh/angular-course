@@ -1,0 +1,7 @@
+<section class="todo">
+    <app-todo-header></app-todo-header>
+    <div class="todo-wrapper">
+        <app-enter-todo (enteredTodo)="selectedTodoItem($event)" (filterEvent)="filterTodoLists($event)"></app-enter-todo>
+        <app-todo-details [todoLists]="isFiltered ? todoFilter : todoLists"></app-todo-details>
+    </div>
+</section>
