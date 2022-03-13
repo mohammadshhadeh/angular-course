@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-xs-12">
 		<img
-			[src]="selectedRecipe.imagePath"
+			[src]="recipe.imagePath"
 			alt=""
 			srcset=""
 			style="max-height: 300px"
@@ -11,7 +11,7 @@
 </div>
 <div class="row">
 	<div class="col-xs-12">
-		<h1>{{ selectedRecipe.name }}</h1>
+		<h1>{{ recipe.name }}</h1>
 	</div>
 </div>
 <div class="row">
@@ -47,6 +47,6 @@
 </div>
 <div class="row">
 	<div class="col-xs-12">
-		{{ selectedRecipe.description }}
+		{{ recipe.description }}
 	</div>
 </div>
