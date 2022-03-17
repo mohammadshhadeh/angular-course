@@ -1,0 +1,26 @@
+h2 {
+    margin: 24px 0 12px;
+}
+
+.comment {
+    margin: 24px 0;
+}
+
+.comment:not(:first-of-type) {
+    border-top: 1px solid #ccc;
+    padding-top: 12px;
+}
+
+.body {
+    margin-bottom: 12px;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.email {
+    font-size: 14px;
+    font-weight: 600;
+}
