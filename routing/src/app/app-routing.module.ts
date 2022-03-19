@@ -7,6 +7,8 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { AuthGuard } from './auth-guard.service';
+import { CanDeactivateGuard } from './servers/edit-server/canDeactivate-guard.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,10 +19,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'servers',
+    // canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     component: ServersComponent,
     children: [
       { path: ':id', component: ServerComponent },
-      { path: ':id/edit', component: EditServerComponent },
+      { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] },
     ],
   },
   { path: 'not-found', component: NotFoundPageComponent },
