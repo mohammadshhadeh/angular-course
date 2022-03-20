@@ -1,17 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container">
-		<a class="navbar-brand col-2" href="#" (click)="goTo('home')">Recipe Book</a>
+		<a class="navbar-brand col-2" routerLink="/">Recipe Book</a>
 		<ul class="navbar-nav d-flex flex-row">
-			<li class="nav-item p-2 active">
-				<a class="nav-link" href="#" (click)="goTo('recipes')">Recipes</a>
+			<li class="nav-item p-2" routerLinkActive="active" >
+				<a class="nav-link" routerLink="/recipes">Recipes</a>
 			</li>
-			<li class="nav-item p-2">
-				<a class="nav-link" href="#" (click)="goTo('shoppingList')">Shopping List</a>
+			<li class="nav-item p-2" routerLinkActive="active">
+				<a class="nav-link" routerLink="/shopping-list">Shopping List</a>
 			</li>
 			<li class="nav-item p-2 dropdown" appDropdown>
 				<a
 					class="nav-link dropdown-toggle"
-					href="#"
 					id="navbarDropdown"
 					role="button"
 					data-bs-toggle="dropdown"
@@ -21,10 +20,10 @@
 				</a>
 				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<li>
-						<a class="dropdown-item" href="#">Save Data</a>
+						<a class="dropdown-item">Save Data</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Fetch Data</a>
+						<a class="dropdown-item">Fetch Data</a>
 					</li>
 				</ul>
 			</li>
