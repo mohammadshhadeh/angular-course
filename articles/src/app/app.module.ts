@@ -12,14 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { CommentComponent } from './components/single-article/comments/comment/comment.component';
 
-const appRoutes: Routes = [
-  { path: '', component: ArticlesComponent },
-  {
-    path: 'article/:id',
-    component: SingleArticleComponent,
-  }
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,14 +19,9 @@ const appRoutes: Routes = [
     SingleArticleComponent,
     HeaderComponent,
     FooterComponent,
-    CommentComponent
+    CommentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }), // <-- debugging purposes only
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [ArticleService],
   bootstrap: [AppComponent],
 })
