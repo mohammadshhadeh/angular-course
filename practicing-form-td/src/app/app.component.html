@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <h1>Template Driven Forms:</h1>
+    <form (ngSubmit)="onSubmitTd()" #form="ngForm">
+      <div class="form-group">
+        <label for="name">Project Name:</label>
+        <input type="text" name="name" id="name" required ngModel />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" email id="email" required ngModel />
+      </div>
+      <div class="form-group">
+        <label for="subscription">Subscription:</label>
+        <select name="subscription" id="subscription" ngModel>
+          <option value="Basic">Basic</option>
+          <option value="Advanced">Advanced</option>
+          <option value="Pro">Pro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" required ngModel />
+      </div>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+    <h1>Reactive Form:</h1>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmitRf()">
+      <div class="form-group">
+        <label for="name">Project Name:</label>
+        <input type="text" name="name" id="name" formControlName="projectName" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" formControlName="email" />
+      </div>
+      <div class="form-group">
+        <label for="subscription">Subscription:</label>
+        <select name="subscription" id="subscription" formControlName="subscription">
+          <option value="None">None</option>
+          <option value="Basic">Basic</option>
+          <option value="Advanced">Advanced</option>
+          <option value="Pro">Pro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" formControlName="password"/>
+      </div>
+      <button type="submit" [disabled]="!reactiveForm.valid">Submit</button>
+    </form>
+  </div>
+</div>

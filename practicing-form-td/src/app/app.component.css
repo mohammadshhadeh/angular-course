@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+input {
+    padding: 2px 0;
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.8;
+}
