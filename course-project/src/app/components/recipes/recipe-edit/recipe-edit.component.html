@@ -1,1 +1,91 @@
-<p>recipe-edit works!</p>
+<div class="row">
+	<div class="col-xs-12">
+		<form
+			class="edit-recipe-form"
+			(ngSubmit)="onSubmit()"
+			[formGroup]="recipeForm"
+		>
+			<div class="row form-submit">
+				<div class="col-xs-12">
+					<button class="btn btn-success" type="submit" [disabled]="recipeForm.invalid">Save</button>
+					<button class="btn btn-danger" type="button">Cancel</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label for="imagePath">Image URL</label>
+						<input
+							class="form-control"
+							type="text"
+							name="imagePath"
+							id="imagePath"
+							formControlName="imagePath"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<img [src]="recipeForm.value.imagePath" class="img-responsive" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label for="description">Description</label>
+						<textarea
+							class="form-control"
+							type="text"
+							name="description"
+							id="description"
+							rows="6"
+							formControlName="description"
+						></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12" formArrayName="ingredients">
+					<div
+						class="row d-flex"
+						*ngFor="
+							let ingredientCtrl of ingredientsFormGroups.controls;
+							let i = index
+						"
+						[formGroupName]="i"
+					>
+						<div class="col-lg-8 col-md-5">
+							<input class="form-control" type="text" formControlName="name" />
+						</div>
+						<div class="col-lg-2 col-md-5">
+							<input
+								class="form-control"
+								type="number"
+								min="1"
+								name="amount"
+								id="amount"
+								formControlName="amount"
+							/>
+						</div>
+						<div class="col-lg-1 col-md-2">
+							<button class="btn btn-danger">X</button>
+						</div>
+					</div>
+					<hr />
+					<div class="row">
+						<div class="col-lg-12">
+							<button
+								class="btn btn-success"
+								type="button"
+								(click)="onAddIngredient()"
+							>
+								Add Ingredient
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
