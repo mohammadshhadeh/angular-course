@@ -15,7 +15,7 @@ export class RecipeEditComponent implements OnInit {
 	constructor(
 		private recipeService: RecipeService,
 		private route: ActivatedRoute,
-		private router: Router,
+		private router: Router
 	) {}
 
 	ngOnInit(): void {
@@ -96,10 +96,10 @@ export class RecipeEditComponent implements OnInit {
 	}
 
 	onCancel() {
-		this.router.navigate(['../'], { relativeTo: this.route })
+		this.router.navigate(['../'], { relativeTo: this.route });
 	}
 
 	onDeleteIngredient(index: number) {
 		this.ingredientsFormGroups.removeAt(index);
-	};
+	}
 }

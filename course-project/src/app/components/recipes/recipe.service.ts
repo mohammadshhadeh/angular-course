@@ -39,16 +39,16 @@ export class RecipeService {
 
 	addRecipe(recipe: Recipe) {
 		this.recipes.push(recipe);
-		this.recipeChanged.next([...this.recipes])
+		this.recipeChanged.next([...this.recipes]);
 	}
 
 	updateRecipe(index: number, newRecipe: Recipe) {
 		this.recipes[index] = newRecipe;
-		this.recipeChanged.next([...this.recipes])
+		this.recipeChanged.next([...this.recipes]);
 	}
 
 	deleteRecipe(index: number) {
 		this.recipes.splice(index, 1);
-		this.recipeChanged.next([...this.recipes])
+		this.recipeChanged.next([...this.recipes]);
 	}
 }
