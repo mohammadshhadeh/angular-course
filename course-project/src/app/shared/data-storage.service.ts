@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Recipe } from '../components/recipes/recipe.model';
 import { RecipeService } from '../components/recipes/recipe.service';
-import { pipe, map, tap } from 'rxjs';
-import { RecipesComponent } from '../components/recipes/recipes.component';
+import { exhaustMap, map, take, tap } from 'rxjs';
+import { AuthService } from '../components/auth/auth.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -12,7 +12,11 @@ export class DataStorageService {
 	private dbUrl: string =
 		'https://course-project-4b526-default-rtdb.firebaseio.com';
 
-	constructor(private http: HttpClient, private recipeService: RecipeService) {}
+	constructor(
+		private http: HttpClient,
+		private recipeService: RecipeService,
+		private authService: AuthService
+	) {}
 
 	storeRecipes() {
 		const recipe = this.recipeService.getRecipes();

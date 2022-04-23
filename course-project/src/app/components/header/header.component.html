@@ -2,11 +2,27 @@
 	<div class="container">
 		<a class="navbar-brand col-2" routerLink="/">Recipe Book</a>
 		<ul class="navbar-nav d-flex flex-row">
-			<li class="nav-item p-2" routerLinkActive="active">
+			<li
+				class="nav-item p-2"
+				routerLinkActive="active"
+				*ngIf="!isAuthenticated"
+			>
+				<a class="nav-link" routerLink="/auth">Authentication</a>
+			</li>
+			<li
+				class="nav-item p-2"
+				routerLinkActive="active"
+				*ngIf="isAuthenticated"
+			>
 				<a class="nav-link" routerLink="/recipes">Recipes</a>
 			</li>
 			<li class="nav-item p-2" routerLinkActive="active">
 				<a class="nav-link" routerLink="/shopping-list">Shopping List</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav d-flex flex-row navbar-right" *ngIf="isAuthenticated">
+			<li class="nav-item p-2">
+				<button class="btn nav-link" (click)="onLogout()">Logout</button>
 			</li>
 			<li class="nav-item p-2 dropdown" appDropdown>
 				<a
@@ -20,10 +36,14 @@
 				</a>
 				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<li>
-						<button class="dropdown-item" (click)="onSaveData()">Save Data</button>
+						<button class="dropdown-item" (click)="onSaveData()">
+							Save Data
+						</button>
 					</li>
 					<li>
-						<button class="dropdown-item" (click)="onFetchData()">Fetch Data</button>
+						<button class="dropdown-item" (click)="onFetchData()">
+							Fetch Data
+						</button>
 					</li>
 				</ul>
 			</li>

@@ -1,0 +1,21 @@
+.col-md-8 {
+    padding: 16px 0;
+    margin: 0 auto;
+}
+
+.button-group {
+    margin-top: 12px;
+}
+
+button + button {
+    margin-left: 16px;
+}
+
+label {
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+input {
+    margin-bottom: 12px;
+}

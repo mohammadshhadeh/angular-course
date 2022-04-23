@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,23 +17,42 @@ import { ShoppingService } from './components/shopping-list/shopping.service';
 import { RecipeStartComponent } from './components/recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './components/recipes/recipe.service';
+import { AuthComponent } from './components/auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { AuthInterceptorService } from './components/auth/auth-interceptor.service';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		HeaderComponent,
-		RecipesComponent,
-		RecipeListComponent,
-		RecipeDetailsComponent,
-		RecipeItemComponent,
-		ShoppingListComponent,
-		ShoppingEditComponent,
+		AuthComponent,
 		DropdownDirective,
-		RecipeStartComponent,
+		HeaderComponent,
+		RecipeDetailsComponent,
 		RecipeEditComponent,
+		RecipeItemComponent,
+		RecipeListComponent,
+		RecipesComponent,
+		RecipeStartComponent,
+		ShoppingEditComponent,
+		ShoppingListComponent,
+		LoadingSpinnerComponent,
 	],
-	imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
-	providers: [RecipeService, ShoppingService],
+	imports: [
+		AppRoutingModule,
+		BrowserModule,
+		FormsModule,
+		HttpClientModule,
+		ReactiveFormsModule,
+	],
+	providers: [
+		RecipeService,
+		ShoppingService,
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptorService,
+			multi: true,
+		},
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
