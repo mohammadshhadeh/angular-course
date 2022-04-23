@@ -13,16 +13,19 @@ import { RecipeService } from './recipe.service';
 	providedIn: 'root',
 })
 export class RecipeResolverService implements Resolve<Recipe[]> {
-	constructor(private dataStorageService: DataStorageService, private recipeService: RecipeService) {}
+	constructor(
+		private dataStorageService: DataStorageService,
+		private recipeService: RecipeService
+	) {}
 	resolve(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Recipe[] | Observable<Recipe[]> | Promise<Recipe[]> {
-        const recipes = this.recipeService.getRecipes();
+		const recipes = this.recipeService.getRecipes();
 
-        if (recipes.length) {
-            return recipes;
-        }
+		if (recipes.length) {
+			return recipes;
+		}
 
 		return this.dataStorageService.fetchRecipes();
 	}
