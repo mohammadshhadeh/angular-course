@@ -20,6 +20,8 @@ import { RecipeService } from './components/recipes/recipe.service';
 import { AuthComponent } from './components/auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './components/auth/auth-interceptor.service';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 
 @NgModule({
 	declarations: [
@@ -36,6 +38,8 @@ import { AuthInterceptorService } from './components/auth/auth-interceptor.servi
 		ShoppingEditComponent,
 		ShoppingListComponent,
 		LoadingSpinnerComponent,
+		AlertComponent,
+		PlaceholderDirective,
 	],
 	imports: [
 		AppRoutingModule,
@@ -54,5 +58,9 @@ import { AuthInterceptorService } from './components/auth/auth-interceptor.servi
 		},
 	],
 	bootstrap: [AppComponent],
+	// old version of ng
+	// entryComponents: [
+	// 	AlertComponent,
+	// ]
 })
 export class AppModule {}

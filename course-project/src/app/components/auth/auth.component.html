@@ -1,11 +1,13 @@
+<ng-template appPlaceholder></ng-template>
 <div class="row">
 	<div class="col-md-8">
-        <div class="alert alert-danger" *ngIf="error">
+		<!-- <div class="alert alert-danger" *ngIf="error">
             <p>{{ error }}</p>
-        </div>
-        <span *ngIf="isLoading">
-            <app-loading-spinner></app-loading-spinner>
-        </span>
+        </div> -->
+		<!-- <app-alert [message]="error" (close)="onHandleError()" *ngIf="error"></app-alert> -->
+		<span *ngIf="isLoading">
+			<app-loading-spinner></app-loading-spinner>
+		</span>
 		<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
 			<div class="form-group">
 				<label for="email">E-Mail:</label>
@@ -13,9 +15,9 @@
 					type="email"
 					class="form-control"
 					name="email"
-                    autocomplete="username"
+					autocomplete="username"
 					id="email"
-                    ngModel
+					ngModel
 					required
 					email
 				/>
@@ -27,14 +29,18 @@
 					class="form-control"
 					name="password"
 					id="password"
-                    autocomplete="current-password"
-                    minlength="6"
-                    ngModel
-                    required
+					autocomplete="current-password"
+					minlength="6"
+					ngModel
+					required
 				/>
 			</div>
 			<div class="button-group">
-				<button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">
+				<button
+					class="btn btn-primary"
+					type="submit"
+					[disabled]="!authForm.valid"
+				>
 					{{ isLoginMode ? "Login" : "Sign Up" }}
 				</button>
 				<button class="btn btn-primary" type="button" (click)="onSwitchMode()">
