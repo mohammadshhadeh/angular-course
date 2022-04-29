@@ -6,20 +6,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ShoppingService } from './components/shopping-list/shopping.service';
-import { RecipeService } from './components/recipes/recipe.service';
 import { AuthComponent } from './components/auth/auth.component';
-import { AuthInterceptorService } from './components/auth/auth-interceptor.service';
 import { RecipesModule } from './components/recipes/recipes.module';
 import { ShoppingListModule } from './components/shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		AuthComponent,
-		HeaderComponent,
-	],
+	declarations: [AppComponent, AuthComponent, HeaderComponent],
 	imports: [
 		AppRoutingModule,
 		BrowserModule,
@@ -29,15 +23,7 @@ import { SharedModule } from './shared/shared.module';
 		RecipesModule,
 		ShoppingListModule,
 		SharedModule,
-	],
-	providers: [
-		RecipeService,
-		ShoppingService,
-		{
-			provide: HTTP_INTERCEPTORS,
-			useClass: AuthInterceptorService,
-			multi: true,
-		},
+		CoreModule,
 	],
 	bootstrap: [AppComponent],
 	// old version of ng
