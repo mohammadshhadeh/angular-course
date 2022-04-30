@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
 import { User } from './user.model';
-
+import { environment } from 'src/environments/environment';
 export interface AuthResponseData {
 	idToken: string;
 	email: string;
@@ -28,7 +28,7 @@ const ERROR_MESSAGES: { [key: string]: string } = {
 	providedIn: 'root',
 })
 export class AuthService {
-	private API_KEY: string = 'AIzaSyDOtxFvKH4RnUDKAvHVCkxEl1Aw9oU1uXw';
+	private API_KEY: string = environment.firebaseAPIKey;
 	private signUpUrl: string = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.API_KEY}`;
 	private signInUrl: string = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.API_KEY}`;
 	user = new BehaviorSubject<User>(null);
