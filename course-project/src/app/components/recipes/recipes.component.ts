@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggingService } from 'src/app/logging.service';
 
 @Component({
 	selector: 'app-recipes',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./recipes.component.css'],
 })
 export class RecipesComponent implements OnInit {
-	constructor() {}
+	constructor(private loggingService: LoggingService) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.loggingService.printLog('Hello from RecipesComponent')
+	}
 }
